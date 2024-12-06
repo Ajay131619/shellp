@@ -69,3 +69,12 @@ VALIDATION(){
     fi
 }
 
+#calling the functions
+
+ACCESS
+
+VERIFICATION
+
+INSTALLATION
+
+VALIDATION
