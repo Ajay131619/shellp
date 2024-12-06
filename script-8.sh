@@ -25,7 +25,6 @@ else
 fi
 
 dnf list installed mysql
-exit 1
 #checking the software is already installed or not
 
 
