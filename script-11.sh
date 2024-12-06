@@ -30,7 +30,9 @@ then
 else
     echo "installation of $2 is failed!!"
     echo "check it once"
+fi
 }
+
 installation(){
 for package in $@
 do 
