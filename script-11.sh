@@ -26,6 +26,7 @@ fi
 
 # installation script is below 
 INSTALLATION(){
+
 for software in $@
 do
 
@@ -63,6 +64,6 @@ ACCESS
 dnf list installed $software
 #checking the software is already installed or not
 
-INSTALLATION
+INSTALLATION $@
 
 VALIDATION
