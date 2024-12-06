@@ -41,7 +41,7 @@ then
     exit 1
 else
     echo "$software is not installed!"
-    echo "installation of mysql is initiated!!"
+    echo "installation of $software is initiated!!"
     dnf install $software -y
   
 fi
