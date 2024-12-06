@@ -1,12 +1,12 @@
 #!/bin/bash
 
-name :: ajay
+# name :: ajay
 
-date :: Fri, Dec  6, 2024 10:47:13 AM
+# date :: Fri, Dec  6, 2024 10:47:13 AM
 
-script name :: printing statements using variables
+# script name :: printing statements using variables
 
-here goes the script 
+# here goes the script 
 
 person1=ajay
 person2=saru
