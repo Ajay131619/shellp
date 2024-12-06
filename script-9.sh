@@ -8,16 +8,6 @@
 
 # here goes the script
 
-#!/bin/bash
-
-# name :: ajay
-
-# date :: Fri, Dec  6, 2024  4:28:45 PM
-
-# script name :: using if-conditions and commands from linux now we are going install a software such as mysql
-
-# here goes the script
-
 userid=$(id -u)
 
 #checking the user's id . cuz, In linux only root user can do this kind of tasks
