@@ -23,10 +23,6 @@ else
 fi
 }
 
-VERIFICATION(){
-dnf list installed $software
-#checking the software is already installed or not
-}
 
 # installation script is below 
 INSTALLATION(){
@@ -64,7 +60,8 @@ VALIDATION(){
 
 ACCESS
 
-VERIFICATION
+dnf list installed $software
+#checking the software is already installed or not
 
 INSTALLATION
 
