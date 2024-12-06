@@ -29,4 +29,3 @@ read -s password
 
 echo " your email is :: $email"
 echo " your password that you have been entered is :: $password"
-
