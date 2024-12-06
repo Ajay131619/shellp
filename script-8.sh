@@ -10,8 +10,6 @@
 
 userid=$(id -u)
 
-exit_status=$?
-
 #checking the user's id . cuz, In linux only root user can do this kind of tasks
 
 if [ $userid -eq 0 ]
@@ -30,7 +28,7 @@ dnf list installed mysql
 
 # installation script is below 
 
-if [ $exit_status -eq 0 ]
+if [ $? -eq 0 ]
 then
     echo "mysql is already installed!!"
     echo "nothing to do!!"
@@ -39,7 +37,7 @@ else
     echo "mysql is not installed!"
     echo "installation of mysql is initiated!!"
     dnf install mysql -y
-    if [ $exit_status -eq 0 ]
+    if [ $? -eq 0 ]
     then
         echo "mysql installed successfully!!"
         exit 1
