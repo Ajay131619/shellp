@@ -21,7 +21,7 @@ then
     
 else
     echo -e "$r you are not root user $n"
-    echo -e " please run this script with $y sudo access $n"
+    echo -e "please run this script with $y sudo access $n"
     exit 1
 fi
 }
@@ -32,7 +32,7 @@ then
     echo -e "installation of $2 is $g successfully done!! $N"
 else
     echo -e "installation of $2 is $r failed!! $N"
-    echo "$y check it once $N"
+    echo -e "$y check it once $N"
 fi
 }
 
@@ -46,8 +46,8 @@ do
   then
       echo -e " $package is $y already installed $N"
   else
-      dnf install $package -y 
-      echo -e "going to $y install $package $N"
+      echo -e "$y going to  install $package $N"
+      dnf install $package -y
   fi
   validation $? $package
 done
