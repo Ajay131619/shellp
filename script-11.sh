@@ -30,6 +30,9 @@ dnf list installed $software
 
 # installation script is below 
 INSTALLATION(){
+for software in $@
+do
+
 if [ $? -eq 0 ]
 then
     echo "$software is already installed!!"
@@ -39,13 +42,13 @@ else
     echo "$software is not installed!"
     echo "installation of $software is initiated!!"
     dnf install $software -y
-  
 fi
+
+done
 }
 
 VALIDATION(){
-         
-    dnf list installed $software
+   dnf list installed $software
     if [ $? -eq 0 ]
     then
         echo "$software installed successfully!!"
@@ -63,9 +66,6 @@ ACCESS
 
 VERIFICATION
 
-for software in $@
-do
 INSTALLATION
-done
 
 VALIDATION
