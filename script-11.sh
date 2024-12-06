@@ -23,47 +23,27 @@ else
 fi
 }
 
-
-# installation script is below 
-INSTALLATION(){
-
-for software in $@
-do
-
-if [ $? -eq 0 ]
+validation(){
+if [ $1 -eq 0 ]
 then
-    echo "$software is already installed!!"
-    echo "nothing to do!!"
-    exit 1
+    echo "installation of $2 is done!!"
 else
-    echo "$software is not installed!"
-    echo "installation of $software is initiated!!"
-    dnf install $software -y
-fi
-
+    echo "installation of $2 is failed!!"
+    echo "check it once"
+}
+installation(){
+for package in $@
+do 
+  dnf list installed $package
+  if [ $? -eq 0 ]
+  then
+      echo "package $package is already installed"
+  else
+      dnf install $package -y 
+  fi
+  validation $? $package
 done
 }
 
-VALIDATION(){
-   dnf list installed $software
-    if [ $? -eq 0 ]
-    then
-        echo "$software installed successfully!!"
-        exit 1
-    else
-        echo "$software installation is failed!!"
-        echo "check it once"
-        exit 1
-    fi
-}
-
-#calling the functions
-
 ACCESS
-
-dnf list installed $software
-#checking the software is already installed or not
-
-INSTALLATION $@
-
-VALIDATION
+installation $@
