@@ -43,7 +43,6 @@ do
       echo "package $package is already installed"
   else
       dnf install $package -y 
-      exit 1
   fi
   validation $? $package
 done
