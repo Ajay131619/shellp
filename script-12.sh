@@ -29,25 +29,25 @@ fi
 validation(){
 if [ $1 -eq 0 ]
 then
-    echo -e "installation of $2 is $g successfully done!! $n"
+    echo -e "installation of $2 is $g successfully done!! $N"
 else
-    echo -e "installation of $2 is $r failed!! $n"
-    echo "$y check it once $n"
+    echo -e "installation of $2 is $r failed!! $N"
+    echo "$y check it once $N"
 fi
 }
 
 installation(){
 for package in $@
 do 
-  echo -e "$y checking the package is already installed or not $n"
+  echo -e "$y checking the package is already installed or not $N"
   dnf list installed $package
   
   if [ $? -eq 0 ]
   then
-      echo -e "package $package is $y already installed $n"
+      echo -e " $package is $y already installed $N"
   else
       dnf install $package -y 
-      echo -e "going to $y install $package $n"
+      echo -e "going to $y install $package $N"
   fi
   validation $? $package
 done
