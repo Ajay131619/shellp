@@ -17,11 +17,11 @@ ACCESS(){
 
 if [ $userid -eq 0 ]
 then
-    echo -e "now the script is $y started installing $n"
+    echo -e "now the script is $y started installing $N"
     
 else
-    echo -e "$r you are not root user $n"
-    echo -e "please run this script with $y sudo access $n"
+    echo -e " $r you are not root user $N"
+    echo -e " $r please run this script with sudo access $N"
     exit 1
 fi
 }
@@ -29,17 +29,17 @@ fi
 validation(){
 if [ $1 -eq 0 ]
 then
-    echo -e "installation of $2 is $g successfully done!! $N"
+    echo -e " installation of $2 is $g successfully done!! $N"
 else
-    echo -e "installation of $2 is $r failed!! $N"
-    echo -e "$y check it once $N"
+    echo -e " installation of $2 is $r failed!! $N"
+    echo -e "$r check it once $N"
 fi
 }
 
 installation(){
 for package in $@
 do 
-  echo -e "$y checking the $package is already installed or not $N"
+  echo "checking the $package is already installed or not"
   dnf list installed $package
   
   if [ $? -eq 0 ]
