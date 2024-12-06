@@ -37,11 +37,13 @@ installation(){
 for package in $@
 do 
   dnf list installed $package
+  exit 1
   if [ $? -eq 0 ]
   then
       echo "package $package is already installed"
   else
       dnf install $package -y 
+      exit 1
   fi
   validation $? $package
 done
