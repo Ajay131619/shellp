@@ -39,7 +39,7 @@ fi
 installation(){
 for package in $@
 do 
-  echo -e "$y checking the package is already installed or not $N"
+  echo -e "$y checking the $package is already installed or not $N"
   dnf list installed $package
   
   if [ $? -eq 0 ]
