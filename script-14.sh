@@ -22,10 +22,10 @@ ACCESS(){
 if [ $userid -eq 0 ]
 then
    
-    echo -e "now the script is $y started installing $N" tee -a $logfile
+    echo -e "now the script is $y started installing $N" | tee -a $logfile
     
 else
-    echo -e " $r you are not root user $N" tee -a $logfile
+    echo -e " $r you are not root user $N" | tee -a $logfile
     echo -e " $r please run this script with sudo access $N" &>> $logfile
     exit 1
 fi
