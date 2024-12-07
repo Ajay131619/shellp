@@ -8,7 +8,8 @@
 logfolder="/var/log/shell-logs"
 timestamp=$(date)
 scriptname=$(echo $0 | awk -F "." '{print $1F}')
-logfile=$(mkdir $logfolder/$scriptname-$timestamp.log)
+logfile="$logfolder/$scriptname-$timestamp.log"
+
 userid=$(id -u)
 r="\e[31m"
 g="\e[32m"
@@ -20,6 +21,7 @@ N="\e[0m"
 ACCESS(){
 if [ $userid -eq 0 ]
 then
+    mkdir -p $logfolder 
     echo -e "now the script is $y started installing $N" &>> $logfile
     
 else
