@@ -10,6 +10,7 @@ userid=$(id -u)
 r="\e[31m"
 g="\e[32m"
 y="\e[33m"
+N="\e[0m"
 
 #checking the user's id . cuz, In linux only root user can do this kind of tasks
 
