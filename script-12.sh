@@ -54,6 +54,8 @@ installation(){
 
 }
 
+ACCESS
+
 for package in $@
 do 
  installation
