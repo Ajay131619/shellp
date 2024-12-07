@@ -55,6 +55,8 @@ installation(){
   validation &>> $logfile
 }
 
+ACCESS
+
 for package in $@
 do 
  installation &>> $logfile
