@@ -37,10 +37,32 @@ else
 fi
 }
 
+# installation(){
+# for package in $@
+# do 
+#   echo "checking the $package is already installed or not"
+#   dnf list installed $package
+  
+#   if [ $? -eq 0 ]
+#   then
+#       echo -e " $package is $y already installed $N"
+#   else
+#       echo -e "$y going to  install $package $N"
+#       dnf install $package -y
+#   fi
+#   validation $? $package
+# done
+# }
+
+# ACCESS
+# installation $@
+
+
+# installation can also be done in another way 
+
 installation(){
-for package in $@
-do 
-  echo "checking the $package is already installed or not"
+ 
+ echo "checking the $package is already installed or not"
   dnf list installed $package
   
   if [ $? -eq 0 ]
@@ -51,8 +73,11 @@ do
       dnf install $package -y
   fi
   validation $? $package
-done
+
+
 }
 
-ACCESS
-installation $@
+for package in $@
+do 
+ installation
+done
