@@ -8,7 +8,7 @@
 logfolder="/var/log/shell-logs"
 timestamp=$(date)
 scriptname=$(echo $0 | awk -F "." '{print $1F}')
-logfile=$(mkdir /$logfolder/$scriptname-$timestamp.log)
+logfile=$(mkdir $logfolder/$scriptname-$timestamp.log)
 userid=$(id -u)
 r="\e[31m"
 g="\e[32m"
