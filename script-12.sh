@@ -28,11 +28,11 @@ fi
 }
 
 validation(){
-if [ $1 -eq 0 ]
+if [ $? -eq 0 ]
 then
-    echo -e " installation of $2 is $g successfully done!! $N"
+    echo -e " installation of $package is $g successfully done!! $N"
 else
-    echo -e " installation of $2 is $r failed!! $N"
+    echo -e " installation of $package is $r failed!! $N"
     echo -e "$r check it once $N"
 fi
 }
@@ -72,7 +72,7 @@ installation(){
       echo -e "$y going to  install $package $N"
       dnf install $package -y
   fi
-  validation $? $package
+  validation #$? $package
 
 
 }
