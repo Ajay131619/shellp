@@ -1,0 +1,4 @@
+#!/bin/bash
+
+read -$@ "enter the names :" tools
+echo "the names are $tools"
