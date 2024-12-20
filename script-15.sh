@@ -29,5 +29,8 @@ echo "$files"
 
 while IFS= read -r file
 do
-echo "$file"
+
+echo -e "$r purging$n $file"
+rm -rf $file
+
 done <<< $files
