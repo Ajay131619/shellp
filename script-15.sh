@@ -30,7 +30,7 @@ echo "$files"
 while IFS= read -r file
 do
 
-echo -e "${r}purging:{$n} $file"
+echo -e "${r}purging:${n} $file"
 rm -rf $file
 
 done <<< $files
