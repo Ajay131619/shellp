@@ -55,3 +55,12 @@ else
 fi
 
 
+# to make a script as a command 
+# follow these steps
+# 1.make a script 
+# 2.make it executable for that use >>>> chmod +x
+# 3.move it to /usr/local/bin/ or /bin/
+# 4.for that use >>>> cp <path of the script> <bin folder path>
+# 5.after that you can use it as a command 
+
+# for example "copy"
