@@ -13,7 +13,7 @@ src_dir="/var/shelllogs"
 r="\e[31m"
 g="\e[32m"
 y="\e[33m"
-N="\e[0m"
+n="\e[0m"
 
 if [ -d $src_dir ]
 then
@@ -23,11 +23,11 @@ else
     exit 1
 fi
 
-files=$(find ${src_dir} -name "*.logs" -mtime +14 )
-echo -e"$y files_>>$n"
+files=$(find $src_dir -name "*.logs" -mtime +14 )
+echo -e "$y files_>>$n"
 echo "$files"
 
-while IFS= read -r files
+while IFS= read -r file
 do
 echo "$file"
-done <<$files
+done <<< $files
