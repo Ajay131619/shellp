@@ -32,15 +32,16 @@ else
     echo -e "destination directory ${r}does not exist${n}"
     exit 1
 fi
-files=$(find $src_dir -name "*.log" -mtime +$days)
-echo -e "${y}files_>>${n}"
-echo "$files"
 
-if [ ! -z $files ] #-z is usage is "if the variable is empty then it is true else it is false",! is used as "not equal to"
+files=$(find $src_dir -name "*.log" -mtime +$days)
+# echo -e "${y}files_>>${n}"
+# echo "$files"
+
+if [ ! -z $files ]    #-z is usage is "if the variable is empty then it is true else it is false",! is used as "not equal to"
 then
     echo -e "${g}files are found$n"
     backup="$dest_dir/backupfiles-$timestamp.zip"
-    $(find $src_dir -name "*.log" -mtime +$days) | zip "$backup" -@
+    find ${src_dir} -name "*.log" -mtime +$days | zip "$backup" -@
     if [ -f $backup ]
     then
         echo "Successfully zippped files older than $days"
