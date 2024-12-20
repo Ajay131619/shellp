@@ -71,7 +71,7 @@ y="\e[33m"
 n="\e[0m"
 
 # Check if source directory exists
-if [ -d "$src_dir" ]
+if [ -d $src_dir ]
 then
     echo -e "source directory ${g}exists${n}"
 else
@@ -80,7 +80,7 @@ else
 fi
 
 # Check if destination directory exists
-if [ -d "$dest_dir" ]
+if [ -d $dest_dir ]
 then
     echo -e "destination directory ${g}exists${n}"
 else
@@ -89,16 +89,16 @@ else
 fi
 
 # Find files older than the specified days
-files=$(find "$src_dir" -name "*.log" -mtime +"$days")
+files=$(find $src_dir -name "*.log" -mtime +$days)
 # echo -e "${y}files_>>${n}"
 # echo "$files"
 
 # Check if files are found
-if [ -n "$files" ]
+if [ -n $files ]
 then
     echo -e "${g}files are found$n"
-    find "$src_dir" -name "*.log" -mtime +"$days" | zip "$backup" -@
-    if [ -f "$backup" ]
+    find $src_dir -name "*.log" -mtime +$days | zip "$backup" -@
+    if [ -f $backup ]
     then
         echo "Successfully zipped files older than $days days to $backup"
     else
