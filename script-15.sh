@@ -23,7 +23,7 @@ else
     exit 1
 fi
 
-files=$(find $src_dir -name "*.logs" -mtime +14 )
+files=$(find $src_dir -name "*.log" -mtime +14 )
 echo -e "$y files_>>$n"
 echo "$files"
 
