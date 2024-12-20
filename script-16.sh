@@ -10,8 +10,9 @@
 
 src_dir=$1
 dest_dir=$2
+ts=$(date)
+backup="$dest_dir/backupfiles-$ts.zip"
 days=${3:-14}
-timestamp=$(date)
 r="\e[31m"
 g="\e[32m"
 y="\e[33m"
@@ -40,7 +41,6 @@ files=$(find $src_dir -name "*.log" -mtime +$days)
 if [ ! -z $files ]    #-z is usage is "if the variable is empty then it is true else it is false",! is used as "not equal to"
 then
     echo -e "${g}files are found$n"
-    backup="$dest_dir/backupfiles-$timestamp.zip"
     find ${src_dir} -name "*.log" -mtime +$days | zip "$backup" -@
     if [ -f $backup ]
     then
