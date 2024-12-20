@@ -97,8 +97,8 @@ files=$(find $src_dir -name "*.log" -mtime +$days)
 if [ -n "$files" ]
 then
     echo -e "${g}files are found$n"
-    find $src_dir -name "*.log" -mtime +$days | zip "$backup" -@
-    if [ -f $backup ]
+    $(find $src_dir -name "*.log" -mtime +$days) | zip "$backup" -@
+    if [ -f "$backup" ]
     then
         echo "Successfully zipped files older than $days days to $backup"
     else
