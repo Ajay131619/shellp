@@ -23,8 +23,8 @@ else
     exit 1
 fi
 
-files=$(find $src_dir -name "*.logs" -mtime +14 )
-echo -e "$y files_>>$n"
+files=$(find ${src_dir} -name "*.logs" -mtime +14 )
+echo -e"$y files_>>$n"
 echo "$files"
 
 while IFS= read -r files
