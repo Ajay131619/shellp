@@ -41,7 +41,7 @@ then
     echo -e "${g}files are found$n"
     backup="$dest_dir/backupfiles-$timestamp.zip"
     $(find $src_dir -name "*.log" -mtime +$days ) | zip "$backup" -@
-    if [ -f $ZIP_FILE ]
+    if [ -f $backup ]
     then
         echo "Successfully zippped files older than $DAYS"
     else
