@@ -17,14 +17,14 @@ N="\e[0m"
 
 if [ -d $src_dir ]
 then
-    echo -e "source directory $d exists$n"
+    echo -e "source directory $g exists$n"
 else
     echo -e "source directory $r does not exist$n"
     exit 1
 fi
 
 files=$(find $src_dir -name "*.logs" -mtime +14 )
-echo "$y files_>>$n"
+echo -e "$y files_>>$n"
 echo "$files"
 
 while IFS= read -r files
