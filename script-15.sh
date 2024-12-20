@@ -17,20 +17,20 @@ n="\e[0m"
 
 if [ -d $src_dir ]
 then
-    echo -e "source directory $g exists$n"
+    echo -e "source directory ${g}exists${n}"
 else
-    echo -e "source directory $r does not exist$n"
+    echo -e "source directory ${r}does not exist${n}"
     exit 1
 fi
 
 files=$(find $src_dir -name "*.log" -mtime +14 )
-echo -e "$y files_>>$n"
+echo -e "${y}files_>>${n}"
 echo "$files"
 
 while IFS= read -r file
 do
 
-echo -e "$r purging$n $file"
+echo -e "${r}purging:{$n} $file"
 rm -rf $file
 
 done <<< $files
