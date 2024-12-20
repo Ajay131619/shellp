@@ -94,7 +94,7 @@ files=$(find $src_dir -name "*.log" -mtime +$days)
 # echo "$files"
 
 # Check if files are found
-if [ -n $files ]
+if [ -n "$files" ]
 then
     echo -e "${g}files are found$n"
     find $src_dir -name "*.log" -mtime +$days | zip "$backup" -@
