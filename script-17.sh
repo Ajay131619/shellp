@@ -3,8 +3,8 @@
 # date :: Fri, Dec 20, 2024  9:19:32 PM
 # script name :: alerting the disk usage using shell script
 
-disk_usage=$(df -HT | grep xfs | awk -F " " '{print $6F}')
-disk_threshold=20%
+disk_usage=$(df -HT | grep xfs | awk -F " " '{print $6F}' | cut -d "%" $1f)
+disk_threshold=20
 disk_name=$(df -HT | grep xfs | awk -F " " '{print $NF}')
 
 echo "date:"$(date)""
