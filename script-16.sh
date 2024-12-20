@@ -37,8 +37,8 @@ fi
 files=$(find $src_dir -name "*.log" -mtime +$days)
 # echo -e "${y}files_>>${n}"
 # echo "$files"
-
-if [ -n $files ]    #-z is usage is "if the variable is empty then it is true else it is false",! is used as "not equal to"
+ #-z is usage is "if the variable is empty then it is true else it is false",! is used as "not equal to"
+if [ -n $files ]   
 then
     echo -e "${r}files are not found$n"
     exit 1        
