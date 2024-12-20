@@ -6,11 +6,17 @@
 disk_usage=$(df -HT | grep xfs | awk -F " " '{print $6F}' | cut -d "%" -f1)
 disk_threshold=20
 disk_name=$(df -HT | grep xfs | awk -F " " '{print $NF}')
+while IFS= read -r file
+do
 
+echo "$file"
+
+done <<< $disk_usage
 echo "date:"$(date)""
-if [ "$disk_usage" -ge "$disk_threshold" ]
-then
-echo "Disk usage is high: "$disk_usage"%"
-echo "Disk name: $disk_name"
-exit 1
-fi
+
+# if [ "$disk_usage" -ge "$disk_threshold" ]
+# then
+# echo "Disk usage is high: "$disk_usage"%"
+# echo "Disk name: $disk_name"
+# exit 1
+# fi
