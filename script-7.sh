@@ -1,10 +1,10 @@
 #!/bin/bash
 
-name :: ajay
+# name :: ajay
 
-date :: Fri, Dec  6, 2024  1:54:15 PM
+# date :: Fri, Dec  6, 2024  1:54:15 PM
 
-script name :: using commands and conditions
+# script name :: using commands and conditions
 
 date=$(date)
 
